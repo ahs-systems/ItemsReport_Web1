@@ -11,6 +11,13 @@ namespace ItemsReport_Web1.Controllers
     
     public class NppController : Controller
     {
+        private SystemDBContext _context;
+
+        public NppController()
+        {
+            _context = new SystemDBContext();
+        }
+
         // GET: Npp
         public ActionResult Add()
         {
@@ -19,19 +26,25 @@ namespace ItemsReport_Web1.Controllers
 
         public ActionResult Index()
         {
+            var itemsReportLetter = _context.ItemsReportLetters.ToList();
+            var status = _context.Status.ToList();
+            var payPeriods = _context.PayPeriods.ToList();
+
             Models.Common _common = new Models.Common();
 
-            var model = new NppFormViewModel();
+            var viewModel = new NppFormViewModel
+            {
+                NewPrimaryPosition = new NewPrimaryPosition(),
+                List_ItemsReportLetter = itemsReportLetter,
+                List_PayPeriod = payPeriods,
+                List_Status = status,
+                List_PayPeriodYear = _common.GetYearList()
+            };
 
-            model.List_ItemsReportLetter = _common.GetItemsReportLetterList();
-            model.List_Status = _common.GetStatusList();
-            model.List_PayPeriod = _common.GetPayPeriodList();
-            model.List_PayPeriodYear = _common.GetYearList();
-            model.NewPrimaryPosition = new NewPrimaryPosition();
-            model.NewPrimaryPosition.EnteredBy = User.Identity.Name;
+           
             
 
-            return View(model);
+            return View(viewModel);
         }        
     }
 }

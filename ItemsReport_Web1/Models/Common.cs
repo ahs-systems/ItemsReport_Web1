@@ -6,9 +6,8 @@ using System.Web.Mvc;
 
 namespace ItemsReport_Web1.Models
 {
-    public class Common
 
-    public  class Common
+    public class Common
     {
         private IEnumerable<string> GetItemsReportLetter()
         {

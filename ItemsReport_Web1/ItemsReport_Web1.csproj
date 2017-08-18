@@ -170,8 +170,17 @@
     <Compile Include="Migrations\201708141933495_AddedBackEnteredDateColumn.Designer.cs">
       <DependentUpon>201708141933495_AddedBackEnteredDateColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708181731173_AddTheCommon3Tables.cs" />
+    <Compile Include="Migrations\201708181731173_AddTheCommon3Tables.Designer.cs">
+      <DependentUpon>201708181731173_AddTheCommon3Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708181806467_UpdatedTheNppModel.cs" />
+    <Compile Include="Migrations\201708181806467_UpdatedTheNppModel.Designer.cs">
+      <DependentUpon>201708181806467_UpdatedTheNppModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model1.cs" />
+    <Compile Include="Models\CommonProp.cs" />
+    <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\NewPrimaryPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708141933495_AddedBackEnteredDateColumn.resx">
       <DependentUpon>201708141933495_AddedBackEnteredDateColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708181731173_AddTheCommon3Tables.resx">
+      <DependentUpon>201708181731173_AddTheCommon3Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708181806467_UpdatedTheNppModel.resx">
+      <DependentUpon>201708181806467_UpdatedTheNppModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

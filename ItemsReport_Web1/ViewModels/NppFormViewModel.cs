@@ -10,9 +10,9 @@ namespace ItemsReport_Web1.ViewModels
     public class NppFormViewModel
     {
         public NewPrimaryPosition NewPrimaryPosition { get; set; }
-        public IEnumerable<SelectListItem> List_ItemsReportLetter { get; set; }
-        public IEnumerable<SelectListItem> List_PayPeriod { get; set; }
+        public IEnumerable<ItemsReportLetter> List_ItemsReportLetter { get; set; }
+        public IEnumerable<PayPeriod> List_PayPeriod { get; set; }        
+        public IEnumerable<Status> List_Status { get; set; }
         public IEnumerable<SelectListItem> List_PayPeriodYear { get; set; }
-        public IEnumerable<SelectListItem> List_Status { get; set; }
     }
 }
