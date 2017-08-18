@@ -1,0 +1,110 @@
+﻿@model ItemsReport_Web1.ViewModels.NppFormViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @*<h4>@Model.NewPrimaryPosition.EnteredBy*@ <h4>Add New Primary Position</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.ItemsReportLetter, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.NewPrimaryPosition.ItemsReportLetter, Model.List_ItemsReportLetter, "Select Items Report Letter", new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.NewPrimaryPosition.ItemsReportLetter, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.ItemsReportLetter, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.PayPeriod, "Pay Period" ,htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.NewPrimaryPosition.PayPeriod, Model.List_PayPeriod, "Select Pay Period", new { @class = "form-control" })
+                @*Html.EditorFor(model => model.NewPrimaryPosition.PayPeriod, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.PayPeriod, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.PayPeriod_Year, "Year", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.NewPrimaryPosition.PayPeriod_Year, Model.List_PayPeriodYear, "Select Year", new { @class = "form-control" })
+                @*Html.EditorFor(model => model.NewPrimaryPosition.PayPeriod_Year, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.PayPeriod_Year, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Site, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPrimaryPosition.Site, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Site, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Emp_Num, "Employee #", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPrimaryPosition.Emp_Num, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Emp_Num, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Emp_Name, "Employee Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPrimaryPosition.Emp_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Emp_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Unit, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPrimaryPosition.Unit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Unit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Occupation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NewPrimaryPosition.Occupation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Occupation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NewPrimaryPosition.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.NewPrimaryPosition.Status, Model.List_Status, "Select Status", new { @class = "form-control" })
+                @*Html.EditorFor(model => model.NewPrimaryPosition.Status, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.NewPrimaryPosition.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+        @Html.HiddenFor(model => model.NewPrimaryPosition.EnteredBy)
+        @Html.HiddenFor(model => model.NewPrimaryPosition.EnteredDate)        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
